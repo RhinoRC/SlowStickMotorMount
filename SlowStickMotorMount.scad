@@ -7,6 +7,7 @@ $fn = 100;
 
 mount_space = 18.65;	//distance between motor mount holes.
 
+//Rod Mount
 difference(){
 	cube([od,od,length],center=true);
 	cube([id,id,length],center=true);
@@ -15,6 +16,7 @@ difference(){
 	}
 }
 
+//Motor Mount
 translate([0,-5,(15+length)/2]){
 	//difference(){
 	//	cylinder(h=15, r=12.5+(2*wall), center=true);
@@ -24,6 +26,9 @@ translate([0,-5,(15+length)/2]){
 	difference(){
 		translate([0,0,-15/2]){
 			cylinder(h=2*wall, r=12.5+(2*wall), center=true);
+		}
+		translate([0,0,-15/2]){
+			cylinder(h=2*wall, r=3.5, center=true );
 		}
 		translate([mount_space/2,0,-15/2]){
 			cylinder(h=2*wall, r=1.5, center=true);
